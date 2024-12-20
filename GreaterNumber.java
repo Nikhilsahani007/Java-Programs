@@ -20,5 +20,6 @@ public class GreaterNumber{
         System.out.println("Enter C value");
         c=sc.nextInt();
         display(a, b, c);
+        sc.close();
     }
         }

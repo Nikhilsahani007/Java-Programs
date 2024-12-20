@@ -15,5 +15,6 @@ public class Vowels_Cons {
         Scanner sc= new Scanner(System.in);
         ch=sc.next().charAt(0);
         display(ch);
+        sc.close();
     }
 }

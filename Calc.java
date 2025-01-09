@@ -1,4 +1,5 @@
 public class Calc {
+
     int num1,num2;
     //No parameters with no return type
     void sum(){
@@ -7,12 +8,13 @@ public class Calc {
     }
     //No Parameters with return type
     int difference(){
-        int difference=num1-num2;
+        int difference;
+        difference = num1-num2;
         return difference;
     }
     //parameters with no return type
-    void product(int a, int b){
-        int product=a*b;
+    void product(int b){
+        int product= 20 *b;
         System.out.println("Product= "+product);
     }
     //Parameters with return type
@@ -21,12 +23,13 @@ public class Calc {
         return quotient;
     }
     public static void main(String[] args) {
+
         Calc calc=new Calc();
         calc.num1=10;
         calc.num2=20;
         calc.sum();
         System.out.println("Difference= "+calc.difference());
-        calc.product(20,30);
+        calc.product(30);
         System.out.println("Division= "+calc.division(20,30));
 
     }

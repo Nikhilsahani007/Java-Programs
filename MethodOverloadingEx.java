@@ -1,4 +1,4 @@
-class Calculator {
+class Calculators {
     // Method to calculate the product of two integers
     public int product(int a, int b) {
         return a * b;
@@ -18,7 +18,7 @@ class Calculator {
 
 public class MethodOverloadingEx {
     public static void main(String[] args) {
-        Calculator calc = new Calculator();
+        Calculators calc = new Calculators();
 
         // Using the overloaded methods
         System.out.println("Product of 5 and 10: " + calc.product(5, 10)); // Two integers

@@ -1,0 +1,78 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ArraySubarray {
+
+    // Method to return the subArray of the main array
+    public static int[] getSubarray(int[] array, int start, int end) {
+        // Calculate the size of the subarray
+        int size = end - start + 1;
+        int[] subarray = new int[size];
+
+        // Copy elements from the original array to the subarray
+        for (int i = 0; i < size; i++) {
+            subarray[i] = array[start + i];
+        }
+
+        return subarray;
+    }
+
+    // Method to find 2nd highest number of the SubArray
+    public static int findSecondHighest(int[] array) {
+        int highest = Integer.MIN_VALUE;
+        int secondHighest = Integer.MIN_VALUE;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > highest) {
+                secondHighest = highest;
+                highest = array[i];
+            } else if (array[i] > secondHighest && array[i] != highest) {
+                secondHighest = array[i];
+            }
+
+        }
+        return secondHighest;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the size of the array
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+
+    
+        int[] array = new int[size];
+
+        // Input array elements
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < size; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        // Input the starting and ending indices for the subarray
+        System.out.print("Enter the starting index of the subarray: ");
+        int start = scanner.nextInt();
+
+        System.out.print("Enter the ending index of the subarray: ");
+        int end = scanner.nextInt();
+
+        // Extract and display the subarray
+        if (start >= 0 && end < size && start <= end) {
+            
+            // Extract the subarray and find the 2nd highest number
+            int[] subarray = getSubarray(array, start, end);
+            int secondHighest = findSecondHighest(subarray);
+
+            // Print the subarray
+            System.out.println("Sub array: " + Arrays.toString(subarray));
+
+            // Print the 2nd highest number
+            System.out.println("2nd Highest element: " + secondHighest);
+        } else {
+            System.out.println("Invalid indices! Please enter valid start and end indices.");
+        }
+
+        scanner.close();
+
+    }
+}

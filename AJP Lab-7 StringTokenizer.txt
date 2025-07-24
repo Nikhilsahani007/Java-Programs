@@ -1,10 +1,14 @@
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
+// Program 1
+// String Tokenizer and reverse of Tokens
+
 public class StringTokenizerEx {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        // Input a string from the user
         System.out.print("Enter a string: ");
         String input = scanner.nextLine();
 

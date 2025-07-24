@@ -1,0 +1,79 @@
+//Program 1
+//Check whether the given number is a Strong number or not.
+
+import java.util.Scanner;
+
+public class StrongNumber {
+    // Method to calculate factorial of a number
+    public static int factorial(int num) {
+        int fact = 1;//Declaration of Factorial of a number as fact
+        for (int i = 1; i <= num; i++) { // Start of for loop
+            fact *= i; 
+        }// end of for loop
+        return fact; // Return Statement
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); // Scanner for input
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt(); // Input number from user
+
+        int temp = number; // Storing original number in a temporary variable
+        int sum = 0; // Initializing sum of factorials
+
+        while (temp > 0) { // Start of While loop
+            int digit = temp % 10; // Extract last digit
+            sum += factorial(digit); // Add factorial of digit to sum
+            temp /= 10; // Remove the last digit
+        } // End of while loop
+
+        // Check if the sum of factorials equals the original number
+        if (sum == number) {
+            System.out.println(number + " is a Strong number.");
+        } else {
+            System.out.println(number + " is not a Strong number.");
+        }
+
+        scanner.close(); // Close the scanner
+    }
+}
+
+
+
+
+// Program 2
+// Printing Prime Numbers in given range
+
+import java.util.Scanner;
+
+public class PrimeNumbersInRange {
+    // Method to check if a number is prime
+    public static boolean isPrime(int num) {
+        if (num <= 1) { // Numbers less than or equal to 1 are not prime
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) { // Check divisors up to the square root of the number
+            if (num % i == 0) {
+                return false; // If divisible, not a prime number
+            }
+        }
+        return true; // If no divisors found, it's a prime number
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); // Scanner for input
+        System.out.print("Enter the start of the range: ");
+        int start = scanner.nextInt(); // Input start of the range
+        System.out.print("Enter the end of the range: ");
+        int end = scanner.nextInt(); // Input end of the range
+
+        System.out.println("Prime numbers between " + start + " and " + end + " are:");
+        for (int i = start; i <= end; i++) { // Start of for loop in range
+            if (isPrime(i)) { // Check if the number is prime
+                System.out.print(i + " "); // Print the prime number
+            } // End of for loop
+        }
+        scanner.close(); // Close the scanner
+    }
+}
+
